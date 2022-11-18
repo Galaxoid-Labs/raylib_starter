@@ -111,6 +111,6 @@ void update(float dt) {
 }
 
 // Called every frame after updating. Use this to draw your game.
-void draw(float dt) { // DRAW YOUR GAME OBJECTS HERE
+void draw(float dt) {
     ClearBackground(PICO_DARK_BLUE);
 }
