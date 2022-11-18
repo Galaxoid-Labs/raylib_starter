@@ -13,22 +13,27 @@
 
 // clang-format off
 // Colors
-#define PICO_LIGHT_GRAY (Color) { 194, 195, 199, 255 }
-#define PICO_WHITE      (Color) { 255, 241, 232, 255 }
-#define PICO_RED        (Color) { 255, 0, 77, 255 }
-#define PICO_ORANGE     (Color) { 255, 163, 0, 255 }
-#define PICO_YELLOW     (Color) { 255, 236, 39, 255 }
-#define PICO_GREEN      (Color) { 0, 228, 54, 255 }
-#define PICO_BLUE       (Color) { 41, 173, 255, 255 }
-#define PICO_INDIGO     (Color) { 131, 118, 156, 255 }
-#define PICO_PINK       (Color) { 255, 119, 168, 255 }
-#define PICO_PEACH      (Color) { 255, 204, 170, 255 }
+#define PICO_DARK_BLUE      (Color) { 29, 43, 83, 255 }
+#define PICO_DARK_PURPLE    (Color) { 126, 37, 83, 255 }
+#define PICO_DARK_GREEN     (Color) { 0, 135, 81, 255 }
+#define PICO_BROWN          (Color) { 171, 82, 54, 255 }
+#define PICO_DARK_GRAY      (Color) { 95, 87, 79, 255 }
+#define PICO_LIGHT_GRAY     (Color) { 194, 195, 199, 255 }
+#define PICO_WHITE          (Color) { 255, 241, 232, 255 }
+#define PICO_RED            (Color) { 255, 0, 77, 255 }
+#define PICO_ORANGE         (Color) { 255, 163, 0, 255 }
+#define PICO_YELLOW         (Color) { 255, 236, 39, 255 }
+#define PICO_GREEN          (Color) { 0, 228, 54, 255 }
+#define PICO_BLUE           (Color) { 41, 173, 255, 255 }
+#define PICO_LAVENDER       (Color) { 131, 118, 156, 255 }
+#define PICO_PINK           (Color) { 255, 119, 168, 255 }
+#define PICO_PEACH          (Color) { 255, 204, 170, 255 }
+
 // clang-format on
 
 static inline void init_jbd_retro() {
     srand(time(NULL));
-    rand(); // for some reason I always get 25 the first time I call rand. So
-            // calling it here...
+    rand(); // for some reason I always get 25 the first time I call rand. Call here to fix...
 }
 
 //----------------------------------------------------------------------------------------------------------------------
@@ -38,22 +43,17 @@ static inline void init_jbd_retro() {
 static inline Color get_random_rgb_color(void) { return (Color){rand() % 256, rand() % 256, rand() % 256, 255}; }
 
 static inline Color get_random_pico_color(void) {
-
     Color colors[] = {
-
-        PICO_LIGHT_GRAY, PICO_WHITE,  PICO_RED,  PICO_ORANGE, PICO_YELLOW, PICO_GREEN,
-        PICO_BLUE,       PICO_INDIGO, PICO_PINK, PICO_PEACH
-
+        PICO_DARK_BLUE, PICO_DARK_PURPLE, PICO_DARK_GREEN, PICO_BROWN, PICO_DARK_GRAY,
+        PICO_LIGHT_GRAY, PICO_WHITE, PICO_RED, PICO_ORANGE, PICO_YELLOW, PICO_GREEN,
+        PICO_BLUE, PICO_LAVENDER, PICO_PINK, PICO_PEACH
     };
-
-    return colors[rand() % 10];
+    return colors[rand() % 15];
 }
 
 static inline float get_random_range(float min, float max) {
-
     float random = ((float)rand()) / (float)RAND_MAX;
     float range = max - min;
-
     return (random * range) + min;
 }
 
