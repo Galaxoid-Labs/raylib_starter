@@ -2,6 +2,7 @@
 #include "raylib.h"
 
 #define RAYGUI_IMPLEMENTATION
+#include "raygui.h"
 
 
 #if defined(PLATFORM_WEB)
@@ -49,6 +50,7 @@ int main() {
     SetWindowMinSize(320, 180);
     init_jbd_retro();
 
+
     // Render texture initialization, used as framebuffer
     RenderTexture2D target = LoadRenderTexture(RENDER_WIDTH, RENDER_HEIGHT);
     SetTextureFilter(target.texture, TEXTURE_FILTER_POINT); // Texture scale filter to use
@@ -75,6 +77,7 @@ int main() {
         BeginDrawing();
 
         ClearBackground(LETTERBOX_COLOR); // Letterbox color
+
 
         // Draw render texture to screen, properly scaled
         DrawTexturePro(target.texture,
