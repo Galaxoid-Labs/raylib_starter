@@ -1,6 +1,9 @@
 #include "jbd_retro.h"
 #include "raylib.h"
 
+#define RAYGUI_IMPLEMENTATION
+
+
 #if defined(PLATFORM_WEB)
 #include <emscripten/emscripten.h>
 #endif
