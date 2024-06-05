@@ -4,10 +4,6 @@
 #define RAYGUI_IMPLEMENTATION
 #include "raygui.h"
 
-#if defined(PLATFORM_WEB)
-#include <emscripten/emscripten.h>
-#endif
-
 //----------------------------------------------------------------------------------------------------------------------
 // Defines
 //----------------------------------------------------------------------------------------------------------------------
@@ -62,9 +58,6 @@ int main() {
     // Used implementation of this function to init your game data, etc
     start();
 
-#if defined(PLATFORM_WEB)
-    emscripten_set_main_loop(UpdateDrawFrame, 0, 1);
-#else
     while (!WindowShouldClose()) {
 
         // Compute required framebuffer scaling
@@ -109,7 +102,6 @@ int main() {
 
         EndDrawing();
     }
-#endif
 
     //------------------------------------------------------------------------------------------------------------------
     // De-Initialization
