@@ -11,4 +11,4 @@ Work in progress but should work on Mac, Linux and Windows.
 
 ## Usage
 
-Simply build and run as you would any other CMake project. It should download and build required Raylib version if not found. Currently expecting 4.2.0
+Simply build and run as you would any other CMake project. It should download and build required Raylib version if not found. Currently expecting 5.0
