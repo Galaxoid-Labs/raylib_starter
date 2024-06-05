@@ -177,6 +177,7 @@ void draw(float dt) {
     DrawRectangleLinesEx((Rectangle){2, 2, RENDER_WIDTH - 4, RENDER_HEIGHT - 4}, 2, PICO_BLUE);
 
     DrawText(TextFormat("Mouse: %i, %i", GetScreenWidth(), display_height()), 20, 20, 20, WHITE);
+
 }
 
 // Called every frame after updating and draw. This is also is not scaled.
